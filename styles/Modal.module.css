@@ -1,0 +1,51 @@
+.modal{
+    /* position: fixed; */
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    /* width: 500px; */
+}
+
+.modalContent {
+    width: 500px;
+    height: 1000px;
+    background-color: lightskyblue;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+    
+    .form input, .form select {
+    width: 300px;
+    height: 45px;
+    margin: 10px;
+    cursor: pointer;
+    }
+
+    .btns {
+        display: flex;
+        /* flex-direction: row; is nor working
+        justify-content: space-around; */
+    }
+    .button1 {
+        background-color: aqua;
+        padding: 10px 25px;
+        margin-right: 20px;
+    }
+    .button2 {
+        background-color: brown;
+        padding: 10px 40px;
+        margin-left: 10px;
+    }

@@ -1,0 +1,45 @@
+.info{
+    display: flex;
+    
+}
+
+.item {
+    background-color: lightgray;
+    width: 100px;
+}
+
+
+.itemBig {
+    width: 250px;
+}
+
+.buttons {
+    display: flex;
+    
+}
+
+
+
+.button {
+    background-color: red; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+.btnAlt {
+    background-color: lightskyblue;
+    width: 80px;
+    margin: 2px;
+}
+.btnExc {
+    background-color: red;
+    width: 80px;
+    margin: 2px;
+}
