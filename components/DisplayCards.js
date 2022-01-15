@@ -2,6 +2,7 @@ import styles from '../styles/DisplayCards.module.css'
 
 export default function DisplayCard( { registro, deleteRegistro, displayModal } ) {
 
+    
     const { 
         idReceitas, 
         tipoReceita, 
@@ -11,40 +12,52 @@ export default function DisplayCard( { registro, deleteRegistro, displayModal } 
         dataRecebimento, 
         descricao } = registro
 
+        const formatDate = (date) => {
+            const [YYYY, MM, DD] = date.split('/')
+            const newDate = `${DD}-${MM}-${YYYY}`
+            return newDate
+        }
+
+
     return (
-        <div className={styles.info}>
-            <div className={`${styles.item} ${styles.itemSmall}`}>
-                <p>idReceitas</p>
+        <div className={styles.container}>
+            <div className={`${styles.item}`}>
+                <p>Receita</p>
                 <p>{idReceitas}</p>
             </div>
-            <div className={`${styles.item} ${styles.itemSmall}`}>
-                <p>tipoReceita</p>
+            <div className={`${styles.item}`}>
+                <p>TipoReceita</p>
                 <p>{tipoReceita}</p>
             </div>
-            <div className={`${styles.item} ${styles.itemSmall}`}>
-                <p>idConta</p>
+            <div className={`${styles.item}`}>
+                <p>Conta</p>
                 <p>{idConta}</p>
             </div>
-            <div className={`${styles.item} ${styles.itemSmall}`}>
-                <p>valor</p>
+            <div className={`${styles.item}`}>
+                <p>Valor</p>
                 <p>{valor}</p>
             </div>
             <div className={`${styles.item} ${styles.itemBig}`}>
-                <p>dataRecebimentoEsperado</p>
-                <p>{dataRecebimentoEsperado}</p>
+                <p>RecebimentoEsperado</p>
+                <p>{formatDate(dataRecebimentoEsperado)}</p>
             </div>
             <div className={`${styles.item} ${styles.itemBig}`}>
-                <p>dataRecebimento</p>
-                <p>{dataRecebimento}</p>
+                <p>Recebimento</p>
+                <p>{formatDate(dataRecebimento)}</p>
             </div>
             <div className={`${styles.item} ${styles.itemBig}`}>
-                <p>descricao</p>
+                <p>Descricao</p>
                 <p>{descricao}</p>
             </div>
-            <div className={`${styles.item} ${styles.btnInfo} ${styles.buttons}`}>
-                <button className={styles.btnAlt} onClick={() => displayModal(registro)}>Alterar</button>
+            <div className={`${styles.item}`}>
                 <button 
-                className={styles.btnExc} 
+                className={`${styles.btn} ${styles.btnAlt}`} 
+                onClick={() => displayModal(registro)}>Alterar</button>
+
+            </div>
+            <div className={`${styles.item}`}>
+                <button 
+                className={`${styles.btn} ${styles.btnExc}`} 
                 onClick={() => deleteRegistro(idReceitas, idConta, valor)}>Excluir</button>
             </div>
 

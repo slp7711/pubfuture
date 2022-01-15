@@ -127,9 +127,9 @@ export default function ConsultarReceitas() {
     //console.log(registros)
 
     return <div className={styles.container}>
-        <h1>Consultar receita</h1>
-        <p>Para consultar receitas de todo o período, deixar os campos "Data Inicial" e "Data Final" sem preenchimento.</p>
         <div className={styles.form}>
+            <h1>Consultar receita</h1>
+            <p>Para consultar receitas de todo o período, deixar os campos "Data Inicial" e "Data Final" sem preenchimento.</p>
 
             <label>Selecione tipo de Receita</label>
             <select defaultValue={""}

@@ -12,12 +12,10 @@ e siga as orientações para a instlação.
 
 Depois será necessária cadastrar um usuário com privilègios para poder manipular o banco de dados.
 
-Use o comando para criar um novo usuário, substituindo 'novoUsuario' e 'senha' com os dados do
-usuário a ser criado
+Use o comando para criar um novo usuário, substituindo 'novoUsuario' e 'senha' com os dados do usuário a ser criado
 CREATE USER 'novoUsuario'@'localhost' IDENTIFIED BY 'senha';
 
-Logo na sequência, atribua acessos para o usuário criado, usando o comando a seguir,
-substituindo 'novoUsuario' pelo nome do usuário recem criado:
+Logo na sequência, atribua acessos para o usuário criado, usando o comando a seguir, substituindo 'novoUsuario' pelo nome do usuário recem criado:
 GRANT ALL PRIVILEGES ON * . * TO 'novoUsuario'@'localhost';
 
 Para que os acessos sejam reconhecidos pelo MYSQL, execute o seguinte comando:
@@ -62,55 +60,34 @@ CREATE TABLE `pubfuture`.`receitas` (
 
 Agora estamos prontos para usar o aplicativo.
 
-## Como Usar o applicati?
+## Como Usar o applicativo?
 
 Primeiro será necessário copiar o aplicativo do repositório do Github no seguinte link:
 https://github.com/slp7711/pubfuture.git
 
-Depois, abrir o diretório onde foram copiados os arquivos e abrir com o Visual Studio Code,
-clicar em "Terminal" e executar o comando: npm run dev.
+### .env.local
+
+Sugerimos usar o "Visual Studio Code", mas pode ser outro editor de texto de sua preferência.
+
+Abrir o diretório onde foram copiados os arquivos e criar um novo arquivo chamado ".env.local" no diretório principal da aplicação e editar com os seguintes parametros:
+
+DB_HOST=localhost
+DB_USER=xxxxx
+DB_PASSWORD=ppppppppppp
+DB_NAME=pubfuture
+
+Substituir o 'xxxxx' em BD_USER pelo nome de usuário escolhido nas etapas anteriores. Da mesma forma para o campo DB_PASSWORD.
+
+
+ Ainda no Visual Studio Code, clicar em "Terminal" e executar o comando: "npm run dev".
 
 Pronto agora é só acessar o aplicato no endereço https://localhost:3000/ e usar o aplicativo
 sem moderação. Ele é auto esplicativo, "usuário friendely".
+
+Obs.: O nr da porta "3000" poderá ser diferente em seu sistema. Se este for o caso, só fazer a alteração.
 
 ### Por fim uma consideração
 
 Algumas funcionalidades, melhorias no aplicativo estão em desenvolvimento e serão
 implementadas em breve.
 
-
-
-
-
-
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
